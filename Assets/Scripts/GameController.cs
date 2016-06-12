@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -38,7 +39,8 @@ public class GameController : MonoBehaviour
         {
             if (Input.GetKeyDown (KeyCode.R))
             {
-                Application.LoadLevel(Application.loadedLevel);
+                int currentSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(currentSceneBuildIndex);
             }
         }
     }
